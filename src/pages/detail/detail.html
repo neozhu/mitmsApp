@@ -1,0 +1,65 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="orange">
+    <ion-title>运单明细</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div id="map" #map></div>
+  <ion-card>
+    <ion-card-header>
+      {{shiporder.ShipOrderNo}}
+    </ion-card-header>
+
+
+    <ion-card-content>
+      <p>
+        {{shiporder.Location1}}
+      </p>
+      <p>
+        {{shiporder.PassLocation}}
+      </p>
+      <p>
+        {{shiporder.Location2}}
+      </p>
+      <p>
+        总件数:{{shiporder.Packages}} / {{shiporder.Pallets}} / {{shiporder.Cartons}} / {{shiporder.BreakCartons}}
+      </p>
+      <p>
+        总体积:{{shiporder.Volume}} / {{shiporder.Weight}}
+      </p>
+      <p>
+        计划送达时间: {{shiporder.PlanDeliveryDate | date:'MM-dd HH:mm'}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button (click)="openupdatestatus()" ion-button clear small color="primary" icon-start>
+          <ion-icon name='pin'></ion-icon>
+          状态
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button (click)="openfeemodal()" ion-button clear small color="primary" icon-start>
+          <ion-icon name='logo-usd'></ion-icon>
+          费用
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='warning'></ion-icon>
+          异常
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

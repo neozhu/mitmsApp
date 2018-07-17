@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="orange">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>运单</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of list" (click)="godetail(item)">
+
+      <h2>{{item.ShipOrderNo }}</h2>
+      <p>{{item.OrderDate | date:'MM-dd HH:mm'}}</p>
+      <p>{{item.Location1}}</p>
+      <p>{{item.Location2}}</p>
+      <ion-note item-end>{{item.Status}} </ion-note>
+      <ion-note item-end>{{item.TimePeriod}} h</ion-note>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

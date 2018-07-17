@@ -1,0 +1,48 @@
+<!--
+  Generated template for the FeeformPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="orange">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()" class="my-style-for-modal">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>上传费用</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <form [formGroup]="feemodel" (ngSubmit)="submitfeeform()">
+      <ion-item>
+        <ion-label>费用</ion-label>
+        <ion-select formControlName="FeeName">
+          <ion-option value="实报实销 ">实报实销</ion-option>
+          <ion-option value="理货费 ">理货费</ion-option>
+          <ion-option value="压车费 ">压车费</ion-option>
+          <ion-option value="过路过桥费 ">过路过桥费</ion-option>
+          <ion-option value="出车补贴 ">出车补贴</ion-option>
+
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number " formControlName="Amount" placeholder="金额"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea formControlName="Remark" placeholder="备注"></ion-textarea>
+      </ion-item>
+      <button ion-button (click)="takePhoto()">
+        <ion-icon name="camera"></ion-icon> 拍照
+      </button>
+      <img [src]="imageURL" *ngIf="imageURL" />
+      <button ion-button type="submit" block>上传</button>
+    </form>
+  </ion-list>
+</ion-content>
